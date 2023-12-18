@@ -3,7 +3,6 @@ extends StaticBody2D
 var win_height : int
 var p_height : int
 var sprint : int = 1
-const MAX_SPRINT = 2
 
 func _ready():
 	win_height = get_viewport_rect().size.y
@@ -11,7 +10,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_pressed("sprint"):
-		sprint = MAX_SPRINT
+		sprint = get_parent().MAX_SPRINT
 	else:
 		sprint = 1
 	

@@ -3,6 +3,7 @@ extends Sprite2D
 var score := [0, 0] # 0:Player, 1:CPU
 const PADDLE_SPEED : int = 500
 const WIN_SCORE = 1
+const MAX_SPRINT = 2
 
 func _on_ball_timer_timeout():
 	$ball.new_ball()
