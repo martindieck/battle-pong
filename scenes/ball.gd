@@ -12,8 +12,9 @@ var b_height : int
 var win_height : int
 
 @onready var player = $"../player"
-var player_pos_now : float
-var player_pos_last : float
+@onready var audio_stream_player = $AudioStreamPlayer
+
+var ball_pitch : float = 1.0
 
 func _ready():
 	win_size = get_viewport_rect().size
@@ -43,18 +44,20 @@ func _physics_process(delta):
 		if not Input.is_action_pressed("activate"):
 			new_collision(collision)
 			isHolding = false
-			player_pos_last = 0
-			player_pos_now = 0
 	elif collision:
 		new_collision(collision)
 	
 func new_collision(collision):
 	var collider
 	if collision:
+		print(ball_pitch)
+		audio_stream_player.set_pitch_scale(ball_pitch)
+		audio_stream_player.play()
 		collider = collision.get_collider()
 		if collider == $"../player" and Input.is_action_pressed("activate"):
 			isHolding = true
 		elif collider == $"../player" or collider == $"../cpu":
+			ball_pitch += 0.05
 			speed += ACCEL
 			dir = new_direction(collider)
 			#dir = dir.bounce(collision.get_normal())
