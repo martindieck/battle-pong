@@ -177,6 +177,8 @@ volume_db = -5.0
 one_shot = true
 autostart = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="scoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="scoreRight" to="." method="_on_score_right_body_entered"]
 [connection signal="timeout" from="ballTimer" to="." method="_on_ball_timer_timeout"]

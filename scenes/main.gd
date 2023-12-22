@@ -5,6 +5,23 @@ const PADDLE_SPEED : int = 500
 const WIN_SCORE = 1
 const MAX_SPRINT = 2
 @onready var audio_stream_player = $hud/AudioStreamPlayer
+@onready var main_audio_player = $AudioStreamPlayer
+
+var start_volume_db = -50
+var end_volume_db = -10
+var interpolation_factor = 0.0
+var interpolation_speed = 0.7  # Adjust this based on how fast you want the volume to increase
+
+func _ready():
+	main_audio_player.set_stream(load("res://Mute City.mp3"))
+	main_audio_player.play(19)
+
+func _process(delta):
+	interpolation_factor += interpolation_speed * delta
+	interpolation_factor = clamp(interpolation_factor, 0.0, 1.0)
+
+	var current_volume_db = lerp(start_volume_db, end_volume_db, interpolation_factor)
+	main_audio_player.set_volume_db(current_volume_db)
 
 func _on_ball_timer_timeout():
 	$ball.new_ball()
