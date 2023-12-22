@@ -57,7 +57,7 @@ func new_collision(collision):
 		if collider == $"../player" and Input.is_action_pressed("activate"):
 			isHolding = true
 		elif collider == $"../player" or collider == $"../cpu":
-			ball_pitch += 0.05
+			ball_pitch += 0.01
 			speed += ACCEL
 			dir = new_direction(collider)
 			#dir = dir.bounce(collision.get_normal())

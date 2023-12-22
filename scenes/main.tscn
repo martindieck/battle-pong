@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/player.gd" id="3_eehaf"]
 [ext_resource type="Script" path="res://scenes/ball.gd" id="4_7sa8n"]
 [ext_resource type="Script" path="res://scenes/cpu.gd" id="4_v02r6"]
-[ext_resource type="AudioStream" uid="uid://dk4jptg0bf4uw" path="res://Boop Final.wav" id="6_cqbb0"]
+[ext_resource type="AudioStream" uid="uid://cjeepe1s5naed" path="res://ping.wav" id="6_dflcg"]
 [ext_resource type="FontFile" uid="uid://ce8232pg2hhws" path="res://Minecraft.ttf" id="7_l22qe"]
 [ext_resource type="AudioStream" uid="uid://5guuaceuvv0t" path="res://Fanfare.wav" id="8_nm5ca"]
 
@@ -99,7 +99,7 @@ grow_vertical = 2
 shape = SubResource("RectangleShape2D_5msdg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ball"]
-stream = ExtResource("6_cqbb0")
+stream = ExtResource("6_dflcg")
 
 [node name="walls" type="StaticBody2D" parent="."]
 collision_layer = 2
