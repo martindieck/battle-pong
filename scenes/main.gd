@@ -2,7 +2,7 @@ extends Sprite2D
 
 var score := [0, 0] # 0:Player, 1:CPU
 const PADDLE_SPEED : int = 500
-const WIN_SCORE = 1
+const WIN_SCORE = 3
 const MAX_SPRINT = 2
 @onready var audio_stream_player = $hud/AudioStreamPlayer
 @onready var main_audio_player = $AudioStreamPlayer
