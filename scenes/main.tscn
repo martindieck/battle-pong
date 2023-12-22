@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://dpg4t1p70mq85"]
 
 [ext_resource type="Texture2D" uid="uid://cnqj6f04c81u" path="res://Bg.png" id="1_kqsnd"]
-[ext_resource type="FontFile" uid="uid://cpeyrcmum0oad" path="res://pixel_font.ttf" id="2_v2aqo"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="2_v7e8r"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="3_eehaf"]
 [ext_resource type="Script" path="res://scenes/ball.gd" id="4_7sa8n"]
 [ext_resource type="Script" path="res://scenes/cpu.gd" id="4_v02r6"]
 [ext_resource type="AudioStream" uid="uid://dk4jptg0bf4uw" path="res://Boop Final.wav" id="6_cqbb0"]
+[ext_resource type="FontFile" uid="uid://ce8232pg2hhws" path="res://Minecraft.ttf" id="7_l22qe"]
 [ext_resource type="AudioStream" uid="uid://5guuaceuvv0t" path="res://Fanfare.wav" id="8_nm5ca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38b2i"]
@@ -131,7 +131,7 @@ offset_left = 456.0
 offset_top = 5.0
 offset_right = 506.0
 offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("2_v2aqo")
+theme_override_fonts/font = ExtResource("7_l22qe")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
@@ -142,7 +142,7 @@ offset_left = 648.0
 offset_top = 5.0
 offset_right = 698.0
 offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("2_v2aqo")
+theme_override_fonts/font = ExtResource("7_l22qe")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
@@ -162,7 +162,7 @@ offset_right = 300.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_v2aqo")
+theme_override_fonts/font = ExtResource("7_l22qe")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_qbd3y")
 text = "Announcement"
