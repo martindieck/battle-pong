@@ -26,6 +26,7 @@ func new_ball():
 	position.x = win_size.x / 2
 	position.y = randi_range(200, win_size.y - 200)
 	speed = START_SPEED
+	ball_pitch = 1
 	dir = random_direction()
 	
 func _physics_process(delta):
@@ -50,7 +51,6 @@ func _physics_process(delta):
 func new_collision(collision):
 	var collider
 	if collision:
-		print(ball_pitch)
 		audio_stream_player.set_pitch_scale(ball_pitch)
 		audio_stream_player.play()
 		collider = collision.get_collider()

@@ -14,6 +14,7 @@ var interpolation_speed = 0.7  # Adjust this based on how fast you want the volu
 
 func _ready():
 	main_audio_player.set_stream(load("res://Mute City.mp3"))
+	main_audio_player.set_volume_db(-50)
 	main_audio_player.play(19)
 
 func _process(delta):
@@ -30,20 +31,26 @@ func _on_score_left_body_entered(body):
 	score[1] += 1
 	$hud/cpuScore.text = str(score[1])
 	if score[1] >= WIN_SCORE:
-		audio_stream_player.set_stream(load("res://Fanfare_back.wav"))
+		main_audio_player.stop()
+		audio_stream_player.set_stream(load("res://game_over.wav"))
 		audio_stream_player.play()
 		$hud/winAnnouncement.text = "CPU Wins!\n'R' to Restart"
 		$hud/winAnnouncement.show()
 	else:
+		audio_stream_player.set_stream(load("res://score.mp3"))
+		audio_stream_player.play()
 		$ballTimer.start()
 
 func _on_score_right_body_entered(body):
 	score[0] += 1
 	$hud/playerScore.text = str(score[0])
 	if score[0] >= WIN_SCORE:
+		main_audio_player.stop()
 		audio_stream_player.set_stream(load("res://Fanfare.wav"))
 		audio_stream_player.play()
 		$hud/winAnnouncement.text = "Player Wins!\n'R' to Restart"
 		$hud/winAnnouncement.show()
 	else:
+		audio_stream_player.set_stream(load("res://score.mp3"))
+		audio_stream_player.play()
 		$ballTimer.start()
